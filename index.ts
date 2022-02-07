@@ -3,7 +3,6 @@ import cors from 'cors';
 import { config } from 'dotenv';
 import mongoose from 'mongoose';
 import usersRouter from './routers/users';
-import bodyParser from 'body-parser';
 
 config();
 
@@ -16,10 +15,12 @@ mongoose.connect(uri);
 const connection = mongoose.connection;
 connection.once('open', () => console.log('Connection to mongoDB established'));
 
+//Tools
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+//Routers
 app.use('/users', usersRouter);
 
 app.get('/', async (req, res) => res.send('Hello world'));

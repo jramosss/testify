@@ -8,4 +8,10 @@ export default class UserUtils {
       password: password,
     });
   }
+
+  async get_by_username(username: string) {
+    const query = await Models.User.find().where('username').equals(username);
+    console.log(`query: ${query}`);
+    return query.length === 0 ? undefined : query[0];
+  }
 }
