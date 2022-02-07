@@ -1,0 +1,41 @@
+{
+  "name": "testify",
+  "version": "1.0.0",
+  "description": "Write your testimony about anything you want!",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npx nodemon index.ts",
+    "build": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jramosss/testify.git"
+  },
+  "keywords": [
+    "CRUD"
+  ],
+  "author": "Chuls",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jramosss/testify/issues"
+  },
+  "homepage": "https://github.com/jramosss/testify#readme",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node-fetch": "^3.0.3",
+    "axios": "^0.25.0",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "eslint": "^8.8.0",
+    "express": "^4.17.2",
+    "http": "^0.0.1-security",
+    "mongodb": "^4.3.1",
+    "mongoose": "^6.2.0",
+    "nodemon": "^2.0.15"
+  }
+}
