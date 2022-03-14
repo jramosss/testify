@@ -3,6 +3,8 @@ import cors from 'cors';
 import { config } from 'dotenv';
 import mongoose from 'mongoose';
 import usersRouter from './routers/users';
+import testimoniesRouter from './routers/testimonies';
+import passport from 'passport';
 
 config();
 
@@ -19,9 +21,11 @@ connection.once('open', () => console.log('Connection to mongoDB established'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// app.use(passport.authenticate('session'));
 
 //Routers
 app.use('/users', usersRouter);
+app.use('/testimonies', testimoniesRouter);
 
 app.get('/', async (req, res) => res.send('Hello world'));
 

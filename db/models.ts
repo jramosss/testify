@@ -27,5 +27,28 @@ const user = new Schema({
   },
 });
 
+const testimony = new Schema({
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    default: 'Chuls',
+  },
+  created_at: {
+    type: Date,
+    default: Date(),
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+  last_edit: {
+    type: Date,
+    default: Date(),
+  },
+  //TODO topics
+});
+
 const User = mongoose.model('User', user);
-export default { User };
+const Testimony = mongoose.model('Testimony', testimony);
+
+export default { User, Testimony };
